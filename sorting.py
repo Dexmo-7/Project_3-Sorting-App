@@ -3,6 +3,8 @@
 #Secondly user choosing one of the sort method
 #Finally we obtain the result
 #User can use another method or provide new numbers
+import bubble
+import insert
 
 #Starting conditions
 prog_set = True
@@ -26,6 +28,7 @@ while prog_set:
         pass
     while 1:
         print("""Choose the sort method:\n
-            1. Bubble sort
+            1. Bubble sort\n
+            2. Insert sort\n
             """)
         pass
