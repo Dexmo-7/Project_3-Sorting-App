@@ -19,11 +19,11 @@ while prog_set:
 
     remote_control = input()
     
-    if remote_control = "1":
+    if remote_control == "1":
         pass
-    elif remote_control = "2":
+    elif remote_control == "2":
         pass
-    elif remote_control = "3":
+    elif remote_control == "3":
         prog_set = False
     else:
         pass
@@ -47,4 +47,4 @@ while prog_set:
             #quickSort()
             pass
         else:
-            pass
+            print("\n")
