@@ -25,15 +25,16 @@ while prog_set:
         pass
     elif remote_control == "3":
         prog_set = False
+        subprog_set = False
     else:
         pass
     while subprog_set:
         print("""Choose the sort method:\n
-            1. Bubble sort\n
-            2. Insert sort\n
-            3. Quick sort\n
-            4. Exit to menu\n
-            """)
+        1. Bubble sort\n
+        2. Insert sort\n
+        3. Quick sort\n
+        4. Exit to menu\n
+        """)
         mini_remote_control = input()
         if mini_remote_control == "4":
             subprog_set = False
