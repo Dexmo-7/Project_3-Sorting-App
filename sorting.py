@@ -3,18 +3,29 @@
 #Secondly user choosing one of the sort method
 #Finally we obtain the result
 #User can use another method or provide new numbers
-import bubble
-import insert
+from bubble import bubbleSort
+from insert import insertionSort
+import random
+
+def viewer(valueList):
+    print("\n------Sorted list------")
+    print(valueList)
+    print("-----------------------\n\n")
 
 #Starting conditions
 prog_set = True
+valueList = []
 
 while prog_set:
+    #cleaning the valueList
+    valueList.clear()
+    #substart condition
     subprog_set = True
+    
     print("""Sorting app.\n
         What do you want to do?\n
-        1. Enter my values (please use comma as separator)\n
-        2. Generate random numbers\n
+        1. Enter my values (please use comma as separator)
+        2. Generate 10 random numbers
         3. Exit""")
 
     remote_control = input()
@@ -22,30 +33,44 @@ while prog_set:
     if remote_control == "1":
         pass
     elif remote_control == "2":
-        pass
+        for item in range(10):
+            rnd_nmb = random.randint(0,100)
+            valueList.append(rnd_nmb)
     elif remote_control == "3":
         prog_set = False
         subprog_set = False
     else:
-        pass
+        subprog_set = False
     while subprog_set:
         print("""Choose the sort method:\n
-        1. Bubble sort\n
-        2. Insert sort\n
-        3. Quick sort\n
-        4. Exit to menu\n
+        1. Bubble sort
+        2. Insert sort
+        3. Quick sort
+        4. Exit to menu
+        5. EXIT\n
         """)
         mini_remote_control = input()
         if mini_remote_control == "4":
             subprog_set = False
         elif mini_remote_control == "1":
-            #bubbleSort()
-            pass
+            valueList = bubbleSort(valueList)
+            viewer(valueList)
         elif mini_remote_control == "2":
-            #insertSort()
-            pass
+            valueList = insertionSort(valueList)
+            viewer(valueList)
         elif mini_remote_control == "3":
-            #quickSort()
+            #valueList = quickSort(valueList)
+            #viewer(valueList)
             pass
+        elif mini_remote_control == "5":
+            subprog_set = False
+            prog_set = False
         else:
+            print("\n")
+        print("Continue? \n1. No \n2. Yes")
+        remote_control = input()
+        if remote_control == "1":
+            subprog_set = False
+            prog_set = False
+        elif remote_control == "2":
             print("\n")
