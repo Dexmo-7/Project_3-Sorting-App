@@ -31,7 +31,9 @@ while prog_set:
     remote_control = input()
     
     if remote_control == "1":
-        pass
+        number_of_el = int(input("How many elements?"))
+        for item in range(number_of_el):
+            valueList.append(int(input(f"Please enter the {item+1} number to sort: ")))
     elif remote_control == "2":
         for item in range(10):
             rnd_nmb = random.randint(0,100)
