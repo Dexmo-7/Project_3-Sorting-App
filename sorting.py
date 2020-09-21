@@ -5,7 +5,9 @@
 #User can use another method or provide new numbers
 from bubble import bubbleSort
 from insert import insertionSort
+from quick import *
 import random
+import timeit
 
 def viewer(valueList):
     print("\n------Sorted list------")
@@ -51,28 +53,30 @@ while prog_set:
         4. Exit to menu
         5. EXIT\n
         """)
-        mini_remote_control = input()
-        if mini_remote_control == "4":
+        remote_control = input()
+        #end of program
+        if remote_control == "4":
             subprog_set = False
-        elif mini_remote_control == "1":
+        #bubbleSort
+        elif remote_control == "1":
             valueList = bubbleSort(valueList)
             viewer(valueList)
-        elif mini_remote_control == "2":
+        #insertionSort
+        elif remote_control == "2":
             valueList = insertionSort(valueList)
             viewer(valueList)
-        elif mini_remote_control == "3":
-            #valueList = quickSort(valueList)
-            #viewer(valueList)
-            pass
+        #quickSort
+        elif remote_control == "3":
+            last = len(valueList)-1
+            valueList = quickSort(valueList, 0, last)
+            viewer(valueList)
         elif mini_remote_control == "5":
             subprog_set = False
             prog_set = False
         else:
             print("\n")
-        print("Continue? \n1. No \n2. Yes")
+        print("Continue? \n1. No \nANY NUM. Yes")
         remote_control = input()
         if remote_control == "1":
             subprog_set = False
             prog_set = False
-        elif remote_control == "2":
-            print("\n")
