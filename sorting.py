@@ -16,7 +16,7 @@ def viewer(valueList):
     print("-----------------------\n\n")
 #subprogram for subloop if "1" then quit the program
 def set_continue(mini_remote_control):
-    mini_remote_control = input("Continue? \n1. No \nANY NUM. Yes")
+    mini_remote_control = input("Continue? \n1. No \nANY NUM. Yes\n")
     return mini_remote_control
 
 #Starting conditions
@@ -28,16 +28,16 @@ while prog_set:
     #cleaning the valueList
     valueList.clear()
     #story telling
-    print("""Sorting app.\n
+    print("""           Sorting app.\n
         What do you want to do?\n
         1. Enter my values (please use comma as separator)
         2. Generate 10 random numbers
         3. Exit""")
-
+    #variable for user communication
     remote_control = input()
     #Enter the values
     if remote_control == "1":
-        number_of_el = int(input("How many elements?"))
+        number_of_el = int(input("\nHow many elements?\n"))
         for item in range(number_of_el):
             valueList.append(int(input(f"Please enter the {item+1} number to sort: ")))
         subprog_set = True
@@ -56,7 +56,8 @@ while prog_set:
         subprog_set = False
     #subloop with sort methods
     while subprog_set:
-        print("""Choose the sort method:\n
+        #storytelling
+        print("""\nChoose the sort method:\n
         1. Bubble sort
         2. Insert sort
         3. Quick sort
